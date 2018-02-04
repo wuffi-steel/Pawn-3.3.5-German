@@ -40,7 +40,7 @@ PawnStats =
 	{"Roter Sockel", "RedSocket", "An empty red socket.  Only counts for an item's base value.", true},
 	{"Gelber Sockel", "YellowSocket", "An empty yellow socket.  Only counts for an item's base value.", true},
 	{"Blauer Sockel", "BlueSocket", "An empty blue socket.  Only counts for an item's base value.", true},
-	{"Meta-Sockel", "MetaSocket", "Ein Metasockel, weder leer noch voll. Addiert Extrapunkte für Helme die einen Meta-Sockel besitzen um die speziellen Effekte von Meta-Edelsteinen zu kompensieren.", true},
+	{"Metasockel", "MetaSocket", "Ein Metasockel, weder leer noch voll. Addiert Extrapunkte für Helme die einen Meta-Sockel besitzen um die speziellen Effekte von Meta-Edelsteinen zu kompensieren.", true},
 	{"Meta: effect", "MetaSocketEffect", "A meta socket, whether empty or full.  Only counts the additional effect of a meta gem, not its stat bonus.", true},
 	
 	{"Waffen Werte"},
@@ -674,23 +674,23 @@ PawnRegexes =
 	{"^%+(%d+) Blockwert$", "BlockValue"}, -- part of complex warrior helm enchantment
 	{"^%+(%d+) Schildblockwert$", "BlockValue"}, -- Titanium Plating
 	{"^Anlegen: Increases the block value of your shield by (%d+)%.$", "BlockValue"},
-	{"^Anlegen: Increases your block rating by (%d+)%.$", "BlockRating"}, -- Waistband of Wrath
+	{"^Anlegen: Erhöht den Blockwert Eures Schildes um (%d+)%.$", "BlockRating"}, -- Waistband of Wrath
 	{"^Anlegen: Increases your shield block rating by (%d+)%.$", "BlockRating"}, -- Warbringer Chestguard
 	{"^%+?(%d+) Blockwertung$", "BlockRating"}, -- Northman's Shield of Blocking
 	{"^%+?(%d+) Schild Blockwertung$", "BlockRating"}, -- enchantment
-	{"^Anlegen: Increases defense rating by (%d+)%.$", "DefenseRating"}, -- Bulwark of Kings
-	{"^Defense Rating %+(%d)%$", "DefenseRating"},
+	{"^Anlegen: Erhöht die Verteidigungswertung um (%d+)%.$", "DefenseRating"}, -- Bulwark of Kings
+	{"^Verteidigungswertung %+(%d)%$", "DefenseRating"},
 	{"^%+?(%d+) Verteidigung$", "DefenseRating"}, -- compound paladin enchantment
 	{"^%+?(%d+) Verteidigungswertung$", "DefenseRating"}, -- Thick Amber; Bloodscale Legguards of Defense
 	{"^%+?(%d+) Ausweichwertung$", "DodgeRating"}, -- Arctic Ring of Eluding
-	{"^Anlegen: Increases your dodge rating by (%d+)%.$", "DodgeRating"}, -- Frostwolf Insignia Rank 6
-	{"^Anlegen: Increases your parry rating by (%d+)%.$", "ParryRating"}, -- Draconic Avenger
+	{"^Anlegen: Erhöht Eure Ausweichwertung um (%d+)%.$", "DodgeRating"}, -- Frostwolf Insignia Rank 6
+	{"^Anlegen: Erhöht Eure Parierwertung um (%d+)%.$", "ParryRating"}, -- Draconic Avenger
 	{"^%+?(%d+) Parierwertung$", "ParryRating"},
 	--Schaden
 	{"^%(([%d%.,]+) Schaden pro Sekunde%)$"}, -- Ignore this; DPS is calculated manually
 	{"^Verursacht ([%d%.,]+) zusätzlichen Schaden pro Sekunde.$", "Dps"},
 	{"^Feurige Waffe$", "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment, 
-	{"^Anlegen: Increases your expertise rating by (%d+)%.$", "ExpertiseRating"}, -- Earthwarden
+	{"^Anlegen: Erhöht Eure Waffenkundewertung um (%d+)%.$", "ExpertiseRating"}, -- Earthwarden
 	{"^%+?(%d+) Waffenkunde$", "ExpertiseRating"}, -- Guardian's Shadow Crystal
 	--Crit
 	{"^Anlegen: Erhöht kritische Trefferwertung um (%d+)%.$", "CritRating"},
@@ -704,11 +704,11 @@ PawnRegexes =
 	{"^Anlegen: Erhöht Trefferwertung um (%d+)%.$", "HitRating"}, -- Don Julio's Band
 	{"^Anlegen: Verbessert Eure Trefferwertung um (%d+)%.$", "HitRating"},
 	{"^%+?(%d+) Trefferwertung$", "HitRating"}, -- 3% hit scope
-	{"^Surefooted$", "HitRating", 10, PawnMultipleStatsFixed}, -- Enchantment (untested); has additional effects
-	{"^Accuracy$", "HitRating", 25, PawnMultipleStatsFixed, "CritRating", 25, PawnMultipleStatsFixed}, -- weapon enchantment
-	{"^Anlegen: Improves your resilience rating by (%d+)%.$", "ResilienceRating"},
-	{"^%+?(%d+) Resilience Rating$", "ResilienceRating"},
-	{"^%+?(%d+) Resilience$", "ResilienceRating"}, -- Sublime Mystic Dawnstone
+	{"^Sicherer Stand$", "HitRating", 10, PawnMultipleStatsFixed}, -- Enchantment (untested); has additional effects
+	{"^Präzision$", "HitRating", 25, PawnMultipleStatsFixed, "CritRating", 25, PawnMultipleStatsFixed}, -- weapon enchantment
+	{"^Anlegen: Erhöht Eure Abhärtungswertung um (%d+)%.$", "ResilienceRating"},
+	{"^%+?(%d+) Abhärtungswertung$", "ResilienceRating"},
+	{"^%+?(%d+) Abhärtung$", "ResilienceRating"}, -- Sublime Mystic Dawnstone
 	--Tempo
 	{"^Counterweight %(%+(%d+) Haste Rating%)", "HasteRating"},
 	{"^Anlegen: Erhöht Tempowertung um (%d+)%.$", "HasteRating"}, -- Swiftsteel Shoulders
@@ -718,10 +718,11 @@ PawnRegexes =
 	{"^%+?(%d+) Meisterschaftswertung$", "MasteryRating"}, -- Fractured Amberjewel (4.0).
 	--AP
 	{"^Anlegen: Erhöht die Angriffskraft um (%d+)%.$", "Ap"},
+	{"^Anlegen: Erhöht Angriffskraft um (%d+)%.$", "Ap"},
 	{"^%+?(%d+) Angriffskraft$", "Ap"},
 	{"^%+?(%d+) Distanzangriffskraft$", "Rap"},
 	{"^Anlegen: Erhöht die Distanzangriffskraft um (%d+)%.$", "Rap"},
-	--Mana Stellt 12 Sek. lang pro Sekunde 30 Mana wieder her.
+	--Mana
 	{"^Anlegen: Stellt alle 5 Sek. (%d+) Mana wieder her.$", "Mp5"},
 	{"^%+?(%d+) Regeneration$", "Mp5"}, -- Shoulder enchantment, Scryers?
 	{"^Mana Regen (%d+) per 5 sec%.$", "Mp5"},
@@ -747,7 +748,7 @@ PawnRegexes =
 	--Zauber
 	{"^Anlegen: Erhöht die Zaubermacht um (%d+)%.$", "SpellPower"}, -- Overlaid Chain Spaulders
 	{"^%+?(%d+) Zaubermacht$", "SpellPower"}, -- Reckless Monarch Topaz
-	{"^Anlegen: Increases armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Onslaught Breastplate, Vereesa's Silver Chain Belt
+	{"^Anlegen: Erhöht die Rüstungsdurchschlagwertung um (%d+)%.$", "ArmorPenetration"}, -- Onslaught Breastplate, Vereesa's Silver Chain Belt
 	{"^Anlegen: Increases your armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Argent Skeleton Crusher
 	--Durchschlag
 	{"^%+?(%d+) Rüstungsdurchschlag$", "ArmorPenetration"}, -- Fractured Scarlet Ruby
@@ -797,7 +798,7 @@ PawnRegexes =
 	{"^Gelber Sockel$", "YellowSocket", 1, PawnMultipleStatsFixed},
 	{"^Blauer Sockel$", "BlueSocket", 1, PawnMultipleStatsFixed},
 	{"^Prismatischer Sockel$", "PrismaticSocket", 1, PawnMultipleStatsFixed}, -- Prismatic / colorless sockets are added by blacksmithing
-	{"^Meta Sockel$", "MetaSocket", 1, PawnMultipleStatsFixed},
+	{"^Metasockel$", "MetaSocket", 1, PawnMultipleStatsFixed},
 	{"^\"Only fits in a meta gem slot%.\"$", "MetaSocketEffect", 1, PawnMultipleStatsFixed}, -- Actual meta gems, not the socket
 
 	-- ========================================

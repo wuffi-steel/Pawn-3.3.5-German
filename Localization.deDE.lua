@@ -2,11 +2,9 @@
 -- www.vgermods.com
 -- © 2006-2010 Green Eclipse.  This mod is released under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 license.
 -- See Readme.htm for more information.
-
 -- 
 -- German resources
 ------------------------------------------------------------
-
 
 ------------------------------------------------------------
 -- "Constants"
@@ -515,7 +513,7 @@ PawnKillLines =
 {
 	"^ \n$", -- The blank line before set items before WoW 2.3
 	" %(%d+/%d+%)$", -- The (1/8) on set items for all versions of WoW
-	"^|cff00e0ffDropped By", -- Mod compatibility: MobInfo-2 (should match mifontLightBlue .. MI_TXT_DROPPED_BY)
+	"^|cff00e0ffDroppt von", -- Mod compatibility: MobInfo-2 (should match mifontLightBlue .. MI_TXT_DROPPED_BY)
 }
 
 -- Lines that begin with any of the following strings will not be searched for separator strings.
@@ -594,7 +592,7 @@ PawnRegexes =
 	{PawnGameConstant(ITEM_MILLABLE)}, -- Millable
 	{PawnGameConstant(ITEM_DISENCHANT_NOT_DISENCHANTABLE)}, -- Cannot be disenchanted
 	{"^Will receive"}, -- Appears in the trade window when an item is about to be enchanted ("Will receive +8 Stamina")
-	{"^Disenchanting requires"}, -- Appears on item tooltips when the Disenchant ability is specified ("Disenchanting requires Enchanting (25)")
+	{"^Entzaubern erfordert"}, -- Appears on item tooltips when the Disenchant ability is specified ("Disenchanting requires Enchanting (25)")
 	{PawnGameConstant(ITEM_ENCHANT_DISCLAIMER)}, -- Item will not be traded!
 	{"^.+ Charges?$"}, -- Brilliant Mana Oil
 	{PawnGameConstant(LOCKED)}, -- Locked
@@ -629,11 +627,11 @@ PawnRegexes =
 	{"^Verbleibende Abklingzeit:"},
 	{"<.+>"}, -- Made by, Right-click to read, etc. (No ^$; can be prefixed by a color)
 	{"^Written by "},
-	{"|cff%x%x%x%x%x%xRequires"}, -- Meta gem requirements
+	{"|cff%x%x%x%x%x%xBenötigt"}, -- Meta gem requirements
 	{"^%d+ Slot .+$"}, -- Bags of all kinds
 	{"^.+%(%d+ sec%)$"}, -- Temporary item buff
 	{"^.+%(%d+ min%)$"}, -- Temporary item buff
-	{"^Enchantment Requires"}, -- Seen on the enchanter-only ring enchantments when you're not an enchanter, and socketed jewelcrafter-only BoP gems
+	{"^Entzaubern erfordert"}, -- Seen on the enchanter-only ring enchantments when you're not an enchanter, and socketed jewelcrafter-only BoP gems
 	
 	-- ========================================
 	-- Strings that represent statistics that Pawn cares about
@@ -659,8 +657,8 @@ PawnRegexes =
 	{"^Use: %+?(%d-) Weapon Damage%.$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Braided Eternium Chain
 	{"^%+?(%d-) Distanz$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Weapons with no damage range: Crossbow of the Albatross
 	{"^Scope %(%+(%d-) Schaden%)$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Ranged weapon scopes
-	{"^%+?(%d+) [Aa]ll [Ss]tats$", "Strength", 1, PawnMultipleStatsExtract, "Agility", 1, PawnMultipleStatsExtract, "Stamina", 1, PawnMultipleStatsExtract, "Intellect", 1, PawnMultipleStatsExtract, "Spirit", 1, PawnMultipleStatsExtract},
-	{"^%+?(%d+) to All Stats$", "Strength", 1, PawnMultipleStatsExtract, "Agility", 1, PawnMultipleStatsExtract, "Stamina", 1, PawnMultipleStatsExtract, "Intellect", 1, PawnMultipleStatsExtract, "Spirit", 1, PawnMultipleStatsExtract}, -- Enchanted Pearl, Enchanted Tear
+	{"^%+?(%d+) [Aa]ll [Ss]tats$", "Stärke", 1, PawnMultipleStatsExtract, "Beweglichkeit", 1, PawnMultipleStatsExtract, "Ausdauer", 1, PawnMultipleStatsExtract, "Intelligenz", 1, PawnMultipleStatsExtract, "Willenskraft", 1, PawnMultipleStatsExtract},
+	{"^%+?(%d+) to All Stats$", "Stärke", 1, PawnMultipleStatsExtract, "Beweglichkeit", 1, PawnMultipleStatsExtract, "Ausdauer", 1, PawnMultipleStatsExtract, "Intelligenz", 1, PawnMultipleStatsExtract, "Willenskraft", 1, PawnMultipleStatsExtract}, -- Enchanted Pearl, Enchanted Tear
 	-- Basic
 	{"^%+?(%-?%d+) Stärke$", "Strength"},
 	{"^Potenz$", "Strength", 20, PawnMultipleStatsFixed}, -- weapon enchantment (untested)
@@ -672,7 +670,7 @@ PawnRegexes =
 	--Tank
 	{"^%+?(%d+) Blocken$", "BlockValue"},
 	{"^%+(%d+) Blockwert$", "BlockValue"}, -- part of complex warrior helm enchantment
-	{"^%+(%d+) Schildblockwert$", "BlockValue"}, -- Titanium Plating
+	{"^%+?(%-?%d+) Schildblockwert$", "BlockValue"}, -- Titanium Plating
 	{"^Anlegen: Increases the block value of your shield by (%d+)%.$", "BlockValue"},
 	{"^Anlegen: Erhöht den Blockwert Eures Schildes um (%d+)%.$", "BlockRating"}, -- Waistband of Wrath
 	{"^Anlegen: Increases your shield block rating by (%d+)%.$", "BlockRating"}, -- Warbringer Chestguard
@@ -697,8 +695,8 @@ PawnRegexes =
 	{"^Anlegen: Increases your critical strike rating by (%d+)%.$", "CritRating"},
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Mantle of Malorne
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Enscribed Fire Opal (after normalization)
-	{"^%+?(%d+) Critical [Ss]trike [Rr]ating%.?$", "CritRating"}, -- One head enchantment is "20 Critical strike rating." with a dot and lowercase
-	{"^Scope %(%+(%d+) Critical Strike Rating%)$", "CritRating"},
+	{"^%+?(%d+) Kritischer [Ss]trike [Rr]ating%.?$", "CritRating"}, -- One head enchantment is "20 Critical strike rating." with a dot and lowercase
+	{"^Scope %(%+(%d+) Kritische Trefferwertung%)$", "CritRating"},
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Heartseeker Scope (untested); Pawn doesn't distinguish between ranged and hybrid crit rating
 	--Hit
 	{"^Anlegen: Erhöht Trefferwertung um (%d+)%.$", "HitRating"}, -- Don Julio's Band
@@ -726,7 +724,7 @@ PawnRegexes =
 	{"^Anlegen: Stellt alle 5 Sek. (%d+) Mana wieder her.$", "Mp5"},
 	{"^%+?(%d+) Regeneration$", "Mp5"}, -- Shoulder enchantment, Scryers?
 	{"^Mana Regen (%d+) per 5 sec%.$", "Mp5"},
-	{"^%+?(%d+) [mM]ana [pP]er 5 [sS]ec%.?$", "Mp5"}, 
+	{"^Alle 5 Sek. %+?(%d+) [mM]ana.?$", "Mp5"}, 
 	{"^%+?(%d+) [mM]ana [eE]very 5 [sS]ec%.?$", "Mp5"}, 
 	{"^%+?(%d+) [mM]ana [pP]er 5 [sS]econds$", "Mp5"}, -- Royal Shadow Draenite
 	{"^%+?(%d+) [mM]ana every 5 [sS]ec%.$", "Mp5"},
@@ -749,7 +747,7 @@ PawnRegexes =
 	{"^Anlegen: Erhöht die Zaubermacht um (%d+)%.$", "SpellPower"}, -- Overlaid Chain Spaulders
 	{"^%+?(%d+) Zaubermacht$", "SpellPower"}, -- Reckless Monarch Topaz
 	{"^Anlegen: Erhöht die Rüstungsdurchschlagwertung um (%d+)%.$", "ArmorPenetration"}, -- Onslaught Breastplate, Vereesa's Silver Chain Belt
-	{"^Anlegen: Increases your armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Argent Skeleton Crusher
+	{"^Anlegen: Erhöht Eure Rüstungsdurchschlagwertung um (%d+)%.$", "ArmorPenetration"}, -- Argent Skeleton Crusher
 	--Durchschlag
 	{"^%+?(%d+) Rüstungsdurchschlag$", "ArmorPenetration"}, -- Fractured Scarlet Ruby
 	{"^Anlegen: Increases your spell penetration by (%d+)%.$", "SpellPenetration"}, -- Frostfire Robe
@@ -799,7 +797,7 @@ PawnRegexes =
 	{"^Blauer Sockel$", "BlueSocket", 1, PawnMultipleStatsFixed},
 	{"^Prismatischer Sockel$", "PrismaticSocket", 1, PawnMultipleStatsFixed}, -- Prismatic / colorless sockets are added by blacksmithing
 	{"^Metasockel$", "MetaSocket", 1, PawnMultipleStatsFixed},
-	{"^\"Only fits in a meta gem slot%.\"$", "MetaSocketEffect", 1, PawnMultipleStatsFixed}, -- Actual meta gems, not the socket
+	{"^\"Passt nur in einen Sockel der Kategorie Meta%.\"$", "MetaSocketEffect", 1, PawnMultipleStatsFixed}, -- Actual meta gems, not the socket
 
 	-- ========================================
 	-- Rare strings that are ignored (common ones are at the top of the file)

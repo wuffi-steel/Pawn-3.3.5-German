@@ -29,54 +29,52 @@ PawnUINoScale = "(none)" -- The name that shows up in lists of scales if you hav
 -- If only a name is present, the row becomes an uneditable header in the UI and is otherwise ignored.
 PawnStats =
 {
-	{"Base stats"},
+	{"Primäre Werte"},
 	{"Stärke", "Strength", "Primäre Wertung, Stärke."},
 	{"Beweglichkeit", "Agility", "Primäre Wertung, Beweglichkeit."},
 	{"Ausdauer", "Stamina", "Primäre Wertung, Ausdauer."},
 	{"Intelligenz", "Intellect", "Primäre Wertung, Intelligenz."},
 	{"Willenskraft", "Spirit", "Primäre Wertung, Willenskraft."},
 	
-	{"Sockets"},
+	{"Sockel"},
 	{"Roter Sockel", "RedSocket", "An empty red socket.  Only counts for an item's base value.", true},
 	{"Gelber Sockel", "YellowSocket", "An empty yellow socket.  Only counts for an item's base value.", true},
 	{"Blauer Sockel", "BlueSocket", "An empty blue socket.  Only counts for an item's base value.", true},
 	{"Meta-Sockel", "MetaSocket", "Ein Metasockel, weder leer noch voll. Addiert Extrapunkte für Helme die einen Meta-Sockel besitzen um die speziellen Effekte von Meta-Edelsteinen zu kompensieren.", true},
 	{"Meta: effect", "MetaSocketEffect", "A meta socket, whether empty or full.  Only counts the additional effect of a meta gem, not its stat bonus.", true},
 	
-	{"Weapon stats"},
+	{"Waffen Werte"},
 	{"DPS", "Dps", "Waffenschaden pro Sekunde.  (Wenn du den DPS-Wert für Waffengattungen unterschiedlich definieren willst, scrolle runter zum Bereich \"Spezielle Waffenwertungen\)"},
 	{"Tempo", "Speed", "Waffenschaden pro Sekunde.  (Wenn du schnelle Waffen bevorzugst, dann sollte diese Nummer negativ sein. Siehe auch \"Tempogrundwert\" im Bereich \"Spezielle Waffenwertungen\".)"},
 	
-	{"Hybrid ratings"},
+	{"Sekundäre Werte"},
 	{"Trefferwertung", "HitRating", "Trefferwert.  Betrifft Nah-, Fernkampfangriffe und Zauber."},
-	{"kritische Trefferwertung", "CritRating", "Kritische Trefferwertung.  Betrifft Nah-, Fernkampfangriffe und Zauber."},
+	{"Kritische Trefferwertung", "CritRating", "Kritische Trefferwertung.  Betrifft Nah-, Fernkampfangriffe und Zauber."},
 	{"Tempowertung", "HasteRating", "Tempo.  Betrifft Nah-, Fernkampfangriffe und Zauber."},
 	{"Meisterschaftswertung", "MasteryRating", VgerCore.Color.Salmon .. "New stat coming in Cataclysm.  " .. VgerCore.Color.Reset .. "Meisterschaftswertung.  Verbessert den Meisterschaftsbonus des primären Talentbaums."},
-	
-	{"Offensive physical stats"},
 	{"Angriffskraft", "Ap", "Attack power.  Does not include attack power that you will receive from Strength or Beweglichkeit, or weapon DPS (for druids)."},
-	{"Ranged AP", "Rap", "Ranged attack power."},
-	{"Feral AP", "FeralAp", "Attack power that a weapon would grant a druid in feral forms.  If you assign a value to this stat, you should not also assign a value to weapon DPS."},
-	{"Expertise rating", "ExpertiseRating", "Expertise rating."},
-	{"Armor pen.", "ArmorPenetration", "Armor penetration rating causes your attacks to ignore some of your opponent's armor.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with ArPen will instead have other offensive stats."},
+	{"Distanzangriffskraft", "Rap", "Ranged attack power."},
+	{"Angriffskraft in Tiergestalt", "FeralAp", "Attack power that a weapon would grant a druid in feral forms.  If you assign a value to this stat, you should not also assign a value to weapon DPS."},
+	{"Waffenkundewertung", "ExpertiseRating", "Expertise rating."},
+	{"Rüstungsdurchschlag.", "ArmorPenetration", "Armor penetration rating causes your attacks to ignore some of your opponent's armor.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with ArPen will instead have other offensive stats."},
 	
-	{"Spell stats"},
+	{"Zauber Werte"},
 	{"Zaubermacht", "SpellPower", "Zaubermacht. Auf Caster-Waffen enthalten, jedoch nicht auf den meisten Rüstungen. Beinhaltet nicht die aus Intelligenz erhaltene Zaubermacht."},
 	{"Mana per 5", "Mp5", "Mana regeneration per 5 seconds.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with 1 MP5 will instead have 2 Spirit."},
 	{"Zauberdurchschlag", "SpellPenetration", "Spell penetration causes your spells to ignore some of your opponent's resistances."},
 	
-	{"Defense stats"},
+	{"Verteidigungs Werte"},
 	{"Rüstung", "Armor", "Rüstung unabhängig vom Gegenstandstyp.  Berücksichtigt keine Bonusrüstung, da Gegenstände mit Bonusrüstung obsolet sind."},
-	{"Armor: base", "BaseArmor", "Base armor value on cloth, leather, mail, and plate.  Can be multiplied by abilities such as Thick Hide and Frost Presence.\n\nTank items with bonus armor in green text will have all of their armor count as base armor, as mods cannot determine how much of the armor is bonus armor."},
-	{"Armor: bonus", "BonusArmor", "Bonus armor value on weapons, trinkets, and rings.  Not affected by abilities and talents that modify armor."},
-	{"Block value", "BlockValue", "Block value increases the amount of damage absorbed with each successful shield block.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with block value will instead have different tanking stats."},
-	{"Block rating", "BlockRating", "Block rating increases your chances of blocking with a shield."},
-	{"Defense rating", "DefenseRating", "Defense rating.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with defense will instead have different tanking stats."},
-	{"Dodge rating", "DodgeRating", "Dodge rating."},
-	{"Parry rating", "ParryRating", "Parry rating."},
-	{"Resilience rating", "ResilienceRating", "Resilience rating."},
+	{"Basisrüstung", "BaseArmor", "Base armor value on cloth, leather, mail, and plate.  Can be multiplied by abilities such as Thick Hide and Frost Presence.\n\nTank items with bonus armor in green text will have all of their armor count as base armor, as mods cannot determine how much of the armor is bonus armor."},
+	{"Bonusrüstung", "BonusArmor", "Bonus armor value on weapons, trinkets, and rings.  Not affected by abilities and talents that modify armor."},
+	{"Blockwert", "BlockValue", "Block value increases the amount of damage absorbed with each successful shield block.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with block value will instead have different tanking stats."},
+	{"Blockwertung", "BlockRating", "Block rating increases your chances of blocking with a shield."},
+	{"Verteidigungswertung$", "DefenseRating", "Defense rating.\n\n" .. VgerCore.Color.Salmon .. "Cataclysm:  " .. VgerCore.Color.Reset .. "Items with defense will instead have different tanking stats."},
+	{"Ausweichwertung$", "DodgeRating", "Dodge rating."},
+	{"Parierwertung", "ParryRating", "Parry rating."},
+	{"Abhärtungswertung", "ResilienceRating", "Resilience rating."},
 	
-	{"Very rare stats"},
+	{"Seltene Werte"},
 	{"Fire spell power", "FireSpellDamage", "Fire-only spell power.  This stat does not appear on items that give spell power to all schools."},
 	{"Shadow spell power", "ShadowSpellDamage", "Shadow-only spell power.  This stat does not appear on items that give spell power to all schools."},
 	{"Nature spell power", "NatureSpellDamage", "Nature-only spell power.  This stat does not appear on items that give spell power to all schools."},
@@ -171,61 +169,61 @@ PawnUIHeaders = -- (%s is the name of the current scale)
 }
 
 -- Configuration UI, Scale selector
-PawnUIFrame_ScaleSelector_Header_Text = "Select a scale:"
+PawnUIFrame_ScaleSelector_Header_Text = "Wählen Sie eine Wertung:"
 
 -- Configuration UI, Scale tab (this is a new tab; the old Scales tab is now the Values tab)
-PawnUIFrame_ScalesTab_Text = "Scale"
+PawnUIFrame_ScalesTab_Text = "Wertung"
 
-PawnUIFrame_ScalesWelcomeLabel_Text = "Scales are sets of stats and values that are used to assign point values to items.  You can customize your own or use scale values that others have created."
+PawnUIFrame_ScalesWelcomeLabel_Text = "Wertungen sind Sätze von Stats und Werten, mit denen Punktwerten zu Elementen zugewiesen werden. Sie können Ihre eigenen anpassen oder Skalierungswerte verwenden, die andere erstellt haben."
 
-PawnUIFrame_ShowScaleCheck_Label_Text = "Show scale in tooltips"
-PawnUIFrame_ShowScaleCheck_Tooltip = "When this option is checked, values for this scale will show up in item tooltips for this character.  Each scale can show up for one of your characters, multiple characters, or no characters at all."
-PawnUIFrame_RenameScaleButton_Text = "Rename"
-PawnUIFrame_RenameScaleButton_Tooltip = "Rename this scale."
-PawnUIFrame_DeleteScaleButton_Text = "Delete"
-PawnUIFrame_DeleteScaleButton_Tooltip = "Delete this scale.\n\nThis command cannot be undone!"
-PawnUIFrame_ScaleColorSwatch_Label_Text = "Change color"
-PawnUIFrame_ScaleColorSwatch_Tooltip = "Change the color that this scale's name and value appear in on item tooltips."
-PawnUIFrame_ScaleTypeLabel_NormalScaleText = "You can change this scale on the Values tab."
-PawnUIFrame_ScaleTypeLabel_ReadOnlyScaleText = "You must make a copy of this scale if you want to customize it."
+PawnUIFrame_ShowScaleCheck_Label_Text = "Zeige Wertung im Tooltips"
+PawnUIFrame_ShowScaleCheck_Tooltip = "Wenn diese Option aktiviert ist, werden Werte für diese Wertung in Tooltips für dieses Zeichen angezeigt. Jede Skala kann für einen Ihrer Charaktere, mehrere Charaktere oder überhaupt keine Charaktere angezeigt werden."
+PawnUIFrame_RenameScaleButton_Text = "Umbenennen"
+PawnUIFrame_RenameScaleButton_Tooltip = "Wertung Umbenennen."
+PawnUIFrame_DeleteScaleButton_Text = "Löschen"
+PawnUIFrame_DeleteScaleButton_Tooltip = "Löschen Sie diese Wertung.\n\nDieser Befehl kann nicht rückgängig gemacht werden!"
+PawnUIFrame_ScaleColorSwatch_Label_Text = "Farbe ändern"
+PawnUIFrame_ScaleColorSwatch_Tooltip = "Ändern Sie die Farbe, in der der Name und der Wert dieser Wertung in Tooltips angezeigt werden."
+PawnUIFrame_ScaleTypeLabel_NormalScaleText = "Sie können diese Wertung auf der Registerkarte Werte ändern."
+PawnUIFrame_ScaleTypeLabel_ReadOnlyScaleText = "Sie müssen eine Kopie dieser Wertung erstellen, wenn Sie sie anpassen möchten."
 
-PawnUIFrame_ScaleSettingsShareHeader_Text = "Share your scales"
+PawnUIFrame_ScaleSettingsShareHeader_Text = "Teile deine Bewertungsprofile mit anderen"
 
-PawnUIFrame_ImportScaleButton_Text = "Import"
-PawnUIFrame_ImportScaleButton_Label_Text = "Add a new scale by pasting a scale tag from the internet."
-PawnUIFrame_ExportScaleButton_Text = "Export"
-PawnUIFrame_ExportScaleButton_Label_Text = "Share your scale with others on the internet."
+PawnUIFrame_ImportScaleButton_Text = "Importieren"
+PawnUIFrame_ImportScaleButton_Label_Text = "Füge ein neues Bewertungsprofil durch Kopieren und Einfügen eines Bewertungsprofil Tags aus dem Internet."
+PawnUIFrame_ExportScaleButton_Text = "Exportieren"
+PawnUIFrame_ExportScaleButton_Label_Text = "Teile deine Bewertungsprofile mit anderen im Internet."
 
-PawnUIFrame_ScaleSettingsNewHeader_Text = "Create a new scale"
+PawnUIFrame_ScaleSettingsNewHeader_Text = "Neues Bewertungsprofil erzeugen"
 
-PawnUIFrame_CopyScaleButton_Text = "Copy"
-PawnUIFrame_CopyScaleButton_Label_Text = "Create a new scale by making a copy of this one."
-PawnUIFrame_NewScaleButton_Text = "Empty"
-PawnUIFrame_NewScaleButton_Label_Text = "Create a new scale from scratch."
-PawnUIFrame_NewScaleFromDefaultsButton_Text = "Defaults"
-PawnUIFrame_NewScaleFromDefaultsButton_Label_Text = "Create a new scale by making a copy of the defaults."
+PawnUIFrame_CopyScaleButton_Text = "Kopieren"
+PawnUIFrame_CopyScaleButton_Label_Text = "Kopiert das momentane Bewertungsprofil."
+PawnUIFrame_NewScaleButton_Text = "Neu (leer)"
+PawnUIFrame_NewScaleButton_Label_Text = "Neues Bewertungsprofil erzeugen."
+PawnUIFrame_NewScaleFromDefaultsButton_Text = "Neu (Vorlage)"
+PawnUIFrame_NewScaleFromDefaultsButton_Label_Text = "Neues Bewertungsprofil durch Kopieren der Standardwerte erzeugen."
 
 -- Configuration UI, Values tab (previously the Scales tab)
-PawnUIFrame_ValuesTab_Text = "Values"
+PawnUIFrame_ValuesTab_Text = "Werte"
 
-PawnUIFrame_ValuesWelcomeLabel_NormalText = "You can customize the values that are assigned to each stat for this scale.  To manage your scales and add new ones, use the Scale tab."
-PawnUIFrame_ValuesWelcomeLabel_NoScalesText = "You have no scale selected.  To get started, go to the Scale tab and start a new scale or paste one from the internet."
-PawnUIFrame_ValuesWelcomeLabel_ReadOnlyScaleText = "The scale that you have selected can't be changed.  If you'd like to change these values, go to the Scale tab and make a copy of this scale or start a new one."
+PawnUIFrame_ValuesWelcomeLabel_NormalText = "Sie können die Werte anpassen, die jedem Stat für diesen Maßstab zugewiesen sind. Verwenden Sie die Registerkarte Wertung, um Ihre Wertung zu verwalten und neue hinzuzufügen."
+PawnUIFrame_ValuesWelcomeLabel_NoScalesText = "Sie haben keine Wertung ausgewählt.  Um zu beginnen, gehen Sie zur Registerkarte Wertung und starten Sie eine neue Wertung oder fügen Sie eine aus dem Internet ein."
+PawnUIFrame_ValuesWelcomeLabel_ReadOnlyScaleText = "Der von Ihnen ausgewählte Wert kann nicht geändert werden. Wenn Sie diese Werte ändern möchten, wechseln Sie zur Registerkarte Wertung und erstellen Sie eine Kopie dieser Skala oder starten Sie eine neue."
 
-PawnUIFrame_ClearValueButton_Text = "Remove"
-PawnUIFrame_ClearValueButton_Tooltip = "Remove this stat from the scale."
+PawnUIFrame_ClearValueButton_Text = "Entfernen"
+PawnUIFrame_ClearValueButton_Tooltip = "Entferne diese Wertung aus dem Bewertungsprofil."
 
-PawnUIFrame_IgnoreStatCheck_Text = "Items with this are unusable"
-PawnUIFrame_IgnoreStatCheck_Tooltip = "Enable this option to cause any item with this stat to not get a value for this scale.  For example, shamans can't wear plate, so a scale designed for a shaman can mark plate as unusable so that plate armor doesn't get a value for that scale."
+PawnUIFrame_IgnoreStatCheck_Text = "Unbenutzbar-Markierung für Gegenstände"
+PawnUIFrame_IgnoreStatCheck_Tooltip = "Aktiviere diese Option um zu verhindern das unbenutzbare Gegenstände eine Wertung erhalten.  Schamanen können zum Beispiel keine Plattenrüstung tragen. Einen Schamanen-Profil kann Plattenrüstung als unbenutzbar markieren, so dass Plattenrüstung keine Wertung für dieses Profil erhält."
 
-PawnUIFrame_ScaleSocketOptionsHeaderLabel_Text = "When calculating a value for this scale:"
-PawnUIFrame_ScaleSocketBestRadio_Text = "Automatically handle sockets for me"
-PawnUIFrame_ScaleSocketBestRadio_Tooltip = "Pawn will calculate a value for this scale assuming that you would socket the item with the gems that would maximize the value of the item."
-PawnUIFrame_ScaleSocketCorrectRadio_Text = "Let me manually pick a socket value"
-PawnUIFrame_ScaleSocketCorrectRadio_Tooltip = "Pawn will calculate a value for this scale based on the number you specify."
+PawnUIFrame_ScaleSocketOptionsHeaderLabel_Text = "Bei der Berechnung eines Wertes für diese Wertung:"
+PawnUIFrame_ScaleSocketBestRadio_Text = "Automatisch Sockeln für mich "
+PawnUIFrame_ScaleSocketBestRadio_Tooltip = "Pawn wird einen Wert für diese Wertung berechnen unter der Annahme, dass Sie den Gegenstand mit den Edelsteinen verbinden würden, die den Wert des Gegenstandes maximieren würden."
+PawnUIFrame_ScaleSocketCorrectRadio_Text = "Lassen Sie mich manuell einen Wertungs-Wert auswählen"
+PawnUIFrame_ScaleSocketCorrectRadio_Tooltip = "Pawn wird einen Wert für diese Wertung basierend auf der von Ihnen angegebenen Anzahl berechnen."
 
-PawnUIFrame_NormalizeValuesCheck_Text = "Normalize values (like Wowhead)"
-PawnUIFrame_NormalizeValuesCheck_Tooltip = "Enable this option to divide the final calculated value for an item by the sum of all stat values in your scale, like Wowhead and Lootzor do.  This helps to even out situations like where one scale has stat values around 1 and another has values around 5.  It also helps to keep numbers manageably small.\n\nFor more information on this setting, see the readme file."
+PawnUIFrame_NormalizeValuesCheck_Text = "Werte normalisieren (ähnlich Wowhead"
+PawnUIFrame_NormalizeValuesCheck_Tooltip = "Aktiviere diese Option um alle Pawn-Wertungen durch die Summe aller Profilwerte zu teilen, wie es Wowhead und Lootzor tun. Dies hilft um eine bessere Bewertung in Situationen zu erzielen, wo eine Wertung Werte um 1 aufweist, während eine andere in der Nähe von 5 liegt. Weiterhin sind die ermittelten Zahlen kleiner."
 
 -- Configuration UI, Compare tab
 PawnUIFrame_CompareTab_Text = "Compare"
@@ -380,7 +378,7 @@ PawnLocal =
 	
 	-- Configuration UI, Values tab
 	["Unusable"] = "(unusable)",
-	["NoStatDescription"] = "Choose a stat from the list on the left.",
+	["NoStatDescription"] = "Wählen Sie eine Wertung aus der Liste auf der linken Seite.",
 	["NoScalesDescription"] = "To begin, import a scale or start a new one.",
 	["StatNameText"] = "1 |cffffffff%s|r is worth:", -- |cffffffff%s|r is the name of the stat, in white
 	
@@ -450,40 +448,40 @@ For more information on customizing Pawn, please see the help file (Readme.htm) 
 -- Localized scale names
 ------------------------------------------------------------
 
-PawnWowheadScale_Provider = "Wowhead scales"
-PawnWowheadScale_WarriorArms = "Warrior: arms"
-PawnWowheadScale_WarriorFury = "Warrior: fury"
-PawnWowheadScale_WarriorTank = "Warrior: tank"
-PawnWowheadScale_PaladinHoly = "Paladin: holy"
-PawnWowheadScale_PaladinTank = "Paladin: tank"
-PawnWowheadScale_PaladinRetribution = "Paladin: retribution"
-PawnWowheadScale_HunterBeastMastery = "Hunter: beast mastery"
-PawnWowheadScale_HunterMarksman = "Hunter: marksman"
-PawnWowheadScale_HunterSurvival = "Hunter: survival"
-PawnWowheadScale_RogueAssassination = "Rogue: assassination"
-PawnWowheadScale_RogueCombat = "Rogue: combat"
-PawnWowheadScale_RogueSubtlety = "Rogue: subtlety"
-PawnWowheadScale_PriestDiscipline = "Priest: discipline"
-PawnWowheadScale_PriestHoly = "Priest: holy"
-PawnWowheadScale_PriestShadow = "Priest: shadow"
-PawnWowheadScale_DeathKnightBloodDps = "DK: blood DPS"
-PawnWowheadScale_DeathKnightBloodTank = "DK: blood tank"
-PawnWowheadScale_DeathKnightFrostDps = "DK: frost DPS"
-PawnWowheadScale_DeathKnightFrostTank = "DK: frost tank"
-PawnWowheadScale_DeathKnightUnholyDps = "DK: unholy DPS"
-PawnWowheadScale_ShamanElemental = "Shaman: elemental"
-PawnWowheadScale_ShamanEnhancement = "Shaman: enhancement"
-PawnWowheadScale_ShamanRestoration = "Shaman: restoration"
-PawnWowheadScale_MageArcane = "Mage: arcane"
-PawnWowheadScale_MageFire = "Mage: fire"
-PawnWowheadScale_MageFrost = "Mage: frost"
-PawnWowheadScale_WarlockAffliction = "Warlock: affliction"
-PawnWowheadScale_WarlockDemonology = "Warlock: demonology"
-PawnWowheadScale_WarlockDestruction = "Warlock: destruction"
-PawnWowheadScale_DruidBalance = "Druid: balance"
-PawnWowheadScale_DruidFeralDps = "Druid: feral cat"
-PawnWowheadScale_DruidFeralTank = "Druid: feral bear"
-PawnWowheadScale_DruidRestoration = "Druid: restoration"
+PawnWowheadScale_Provider = "Wowhead Wertungen"
+PawnWowheadScale_WarriorArms = "Krieger: Waffen"
+PawnWowheadScale_WarriorFury = "Krieger: Furor"
+PawnWowheadScale_WarriorTank = "Krieger: Schutz"
+PawnWowheadScale_PaladinHoly = "Paladin: Heilig"
+PawnWowheadScale_PaladinTank = "Paladin: Schutz"
+PawnWowheadScale_PaladinRetribution = "Paladin: Vergeltung"
+PawnWowheadScale_HunterBeastMastery = "Jäger: Tierherrschaft"
+PawnWowheadScale_HunterMarksman = "Jäger: Treffsicherheit"
+PawnWowheadScale_HunterSurvival = "Jäger: Überleben"
+PawnWowheadScale_RogueAssassination = "Schurke: Meucheln"
+PawnWowheadScale_RogueCombat = "Schurke: Kampf"
+PawnWowheadScale_RogueSubtlety = "Schurke: Täuschung"
+PawnWowheadScale_PriestDiscipline = "Priester: Disziplin"
+PawnWowheadScale_PriestHoly = "Priester: Heilig"
+PawnWowheadScale_PriestShadow = "Priester: Schatten"
+PawnWowheadScale_DeathKnightBloodDps = "Todesritter: Blut DPS"
+PawnWowheadScale_DeathKnightBloodTank = "Todesritter: Blut Tank"
+PawnWowheadScale_DeathKnightFrostDps = "Todesritter: Frost DPS"
+PawnWowheadScale_DeathKnightFrostTank = "Todesritter: Frost Tank"
+PawnWowheadScale_DeathKnightUnholyDps = "Todesritter: Unheilig DPS"
+PawnWowheadScale_ShamanElemental = "Schamane: Elementar"
+PawnWowheadScale_ShamanEnhancement = "Schamane: Verstärkung"
+PawnWowheadScale_ShamanRestoration = "Schamane: Wiederherstellung"
+PawnWowheadScale_MageArcane = "Magier: Arkan"
+PawnWowheadScale_MageFire = "Magier: Feuer"
+PawnWowheadScale_MageFrost = "Magier: Frost"
+PawnWowheadScale_WarlockAffliction = "Hexenmeister: Gebrechen"
+PawnWowheadScale_WarlockDemonology = "Hexenmeister: Dämonologie"
+PawnWowheadScale_WarlockDestruction = "Hexenmeister: Zerstörung"
+PawnWowheadScale_DruidBalance = "Druide: Gleichgewicht"
+PawnWowheadScale_DruidFeralDps = "Druide: Wildheit"
+PawnWowheadScale_DruidFeralTank = "Druide: Wächter"
+PawnWowheadScale_DruidRestoration = "Druide: Wiederherstellung"
 
 ------------------------------------------------------------
 -- Tooltip parsing expressions
@@ -506,11 +504,11 @@ PawnSeparators =
 	", ",
 	"/",
 	" & ",
-	" and ",
+	" und ",
 }
 
 -- This string indicates that whatever stats follow it on the same line is the item's socket bonus.
-PawnSocketBonusPrefix = "Socket Bonus: "
+PawnSocketBonusPrefix = "Sockelbonus: "
 
 -- Lines that match any of the following patterns will cause all further tooltip parsing to stop.
 PawnKillLines =
@@ -524,20 +522,21 @@ PawnKillLines =
 PawnSeparatorIgnorePrefixes =
 {
 	'"', -- double quote
-	"Equip:",
-	"Use:",
-	"Chance on hit:",
+	"Anlegen:",
+	"Benutzen:",
+	"Chance, bei einem Treffer:",
 }
 
 -- Items that begin with any of the following strings will never be parsed.
 PawnIgnoreNames =
 {
-	"Design:",
-	"Formula:",
-	"Manual:",
-	"Pattern:",
-	"Plans:",
-	"Recipe:",
+	"Bauplan:",
+	"Formel:",
+	"Handbuch:",
+	"Muster:",
+	"Pläne:",
+	"Rezept:",
+	"Rolle:",
 	"Schematic:",
 }
 
@@ -618,16 +617,16 @@ PawnRegexes =
 	{PawnGameConstant(MAJOR_GLYPH)}, -- Major Glyph
 	{PawnGameConstant(MINOR_GLYPH)}, -- Minor Glyph
 	{"^Totem$"},
-	{"^Relic$"},
-	{"^Idol$"},
-	{"^Libram$"},
-	{"^Mount$"}, -- Cenarion War Hippogryph
-	{"^Classes:"},
-	{"^Races:"},
-	{"^Requires"},
-	{"^Durability"},
-	{"^Duration:"},
-	{"^Cooldown remaining:"},
+	{"^Relikt$"},
+	{"^Götze$"},
+	{"^Buchband$"},
+	{"^Reittier$"}, -- Cenarion War Hippogryph
+	{"^Klassen:"},
+	{"^Rasse:"},
+	{"^Benötigt"},
+	{"^Haltbarkeit"},
+	{"^Dauer:"},
+	{"^Verbleibende Abklingzeit:"},
 	{"<.+>"}, -- Made by, Right-click to read, etc. (No ^$; can be prefixed by a color)
 	{"^Written by "},
 	{"|cff%x%x%x%x%x%xRequires"}, -- Meta gem requirements
@@ -640,79 +639,90 @@ PawnRegexes =
 	-- Strings that represent statistics that Pawn cares about
 	-- ========================================
 	{PawnGameConstant(INVTYPE_RANGED), "IsRanged", 1, PawnMultipleStatsFixed}, -- Ranged
-	{"^Projectile$", "IsRanged", 1, PawnMultipleStatsFixed}, -- Projectile
+	{"^Projektil$", "IsRanged", 1, PawnMultipleStatsFixed}, -- Projectile
 	{PawnGameConstant(INVTYPE_THROWN), "IsRanged", 1, PawnMultipleStatsFixed}, -- Thrown
 	{PawnGameConstant(INVTYPE_WEAPON), "IsOneHand", 1, PawnMultipleStatsFixed}, -- One-Hand
 	{PawnGameConstant(INVTYPE_2HWEAPON), "IsTwoHand", 1, PawnMultipleStatsFixed}, -- Two-Hand
 	{PawnGameConstant(INVTYPE_WEAPONMAINHAND), "IsMainHand", 1, PawnMultipleStatsFixed}, -- Main Hand
 	{PawnGameConstant(INVTYPE_WEAPONOFFHAND), "IsOffHand", 1, PawnMultipleStatsFixed}, -- Off Hand
 	{PawnGameConstant(INVTYPE_HOLDABLE)}, -- Held In Off-Hand; no Pawn stat for this
-	{"^(%d-) %- (%d-) Schadensbonus$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Standard weapon
+	
+	-- DMG Standard
+	{"^(%d-) %- (%d-) Schaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Standard weapon
 	{"^%+?(%d-) %- (%d-) Feuerschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand
 	{"^%+?(%d-) %- (%d-) Schattenschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand
 	{"^%+?(%d-) %- (%d-) Naturschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand, Thunderfury
 	{"^%+?(%d-) %- (%d-) Arkaneschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand
 	{"^%+?(%d-) %- (%d-) Frostschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand
 	{"^%+?(%d-) %- (%d-) Heiligschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 2, PawnMultipleStatsExtract}, -- Wand, Ashbringer
-	{"^%+?(%d-) Waffenschaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Weapon enchantments
-	{"^Equip: %+?(%d-) Weapon Damage%.$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Braided Eternium Chain
+	{"^%+?(%d-) Schaden$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Weapon enchantments
+	{"^Use: %+?(%d-) Weapon Damage%.$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Braided Eternium Chain
 	{"^%+?(%d-) Distanz$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Weapons with no damage range: Crossbow of the Albatross
-	{"^Scope %(%+(%d-) Damage%)$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Ranged weapon scopes
+	{"^Scope %(%+(%d-) Schaden%)$", "MinDamage", 1, PawnMultipleStatsExtract, "MaxDamage", 1, PawnMultipleStatsExtract}, -- Ranged weapon scopes
 	{"^%+?(%d+) [Aa]ll [Ss]tats$", "Strength", 1, PawnMultipleStatsExtract, "Agility", 1, PawnMultipleStatsExtract, "Stamina", 1, PawnMultipleStatsExtract, "Intellect", 1, PawnMultipleStatsExtract, "Spirit", 1, PawnMultipleStatsExtract},
 	{"^%+?(%d+) to All Stats$", "Strength", 1, PawnMultipleStatsExtract, "Agility", 1, PawnMultipleStatsExtract, "Stamina", 1, PawnMultipleStatsExtract, "Intellect", 1, PawnMultipleStatsExtract, "Spirit", 1, PawnMultipleStatsExtract}, -- Enchanted Pearl, Enchanted Tear
+	-- Basic
 	{"^%+?(%-?%d+) Stärke$", "Strength"},
 	{"^Potenz$", "Strength", 20, PawnMultipleStatsFixed}, -- weapon enchantment (untested)
 	{"^%+?(%-?%d+) Beweglichkeit$", "Agility"},
 	{"^%+?(%-?%d+) Ausdauer$", "Stamina"},
 	{"^%+?(%-?%d+) Intelligenz$", "Intellect"}, -- negative Intellect: Kreeg's Mug
 	{"^%+?(%-?%d+) Willenskraft$", "Spirit"},
-	{"^Titanium Weapon Chain$", "HitRating", 28, PawnMultipleStatsFixed}, -- Weapon enchantment; has additional effects
+	{"^Titanwaffenkette$", "HitRating", 28, PawnMultipleStatsFixed}, -- Weapon enchantment; has additional effects
+	--Tank
 	{"^%+?(%d+) Blocken$", "BlockValue"},
 	{"^%+(%d+) Blockwert$", "BlockValue"}, -- part of complex warrior helm enchantment
 	{"^%+(%d+) Schildblockwert$", "BlockValue"}, -- Titanium Plating
-	{"^Equip: Increases the block value of your shield by (%d+)%.$", "BlockValue"},
-	{"^Equip: Increases your block rating by (%d+)%.$", "BlockRating"}, -- Waistband of Wrath
-	{"^Equip: Increases your shield block rating by (%d+)%.$", "BlockRating"}, -- Warbringer Chestguard
+	{"^Anlegen: Increases the block value of your shield by (%d+)%.$", "BlockValue"},
+	{"^Anlegen: Increases your block rating by (%d+)%.$", "BlockRating"}, -- Waistband of Wrath
+	{"^Anlegen: Increases your shield block rating by (%d+)%.$", "BlockRating"}, -- Warbringer Chestguard
 	{"^%+?(%d+) Blockwertung$", "BlockRating"}, -- Northman's Shield of Blocking
 	{"^%+?(%d+) Schild Blockwertung$", "BlockRating"}, -- enchantment
-	{"^Equip: Increases defense rating by (%d+)%.$", "DefenseRating"}, -- Bulwark of Kings
+	{"^Anlegen: Increases defense rating by (%d+)%.$", "DefenseRating"}, -- Bulwark of Kings
 	{"^Defense Rating %+(%d)%$", "DefenseRating"},
 	{"^%+?(%d+) Verteidigung$", "DefenseRating"}, -- compound paladin enchantment
 	{"^%+?(%d+) Verteidigungswertung$", "DefenseRating"}, -- Thick Amber; Bloodscale Legguards of Defense
 	{"^%+?(%d+) Ausweichwertung$", "DodgeRating"}, -- Arctic Ring of Eluding
-	{"^Equip: Increases your dodge rating by (%d+)%.$", "DodgeRating"}, -- Frostwolf Insignia Rank 6
-	{"^Equip: Increases your parry rating by (%d+)%.$", "ParryRating"}, -- Draconic Avenger
+	{"^Anlegen: Increases your dodge rating by (%d+)%.$", "DodgeRating"}, -- Frostwolf Insignia Rank 6
+	{"^Anlegen: Increases your parry rating by (%d+)%.$", "ParryRating"}, -- Draconic Avenger
 	{"^%+?(%d+) Parierwertung$", "ParryRating"},
-	{"^%(([%d%.,]+) damage per second%)$"}, -- Ignore this; DPS is calculated manually
-	{"^Adds ([%d%.,]+) damage per second$", "Dps"},
-	{"^Fiery Weapon$", "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment, 
-	{"^Equip: Increases your expertise rating by (%d+)%.$", "ExpertiseRating"}, -- Earthwarden
+	--Schaden
+	{"^%(([%d%.,]+) Schaden pro Sekunde%)$"}, -- Ignore this; DPS is calculated manually
+	{"^Verursacht ([%d%.,]+) zusätzlichen Schaden pro Sekunde.$", "Dps"},
+	{"^Feurige Waffe$", "Dps", 4, PawnMultipleStatsFixed}, -- weapon enchantment, 
+	{"^Anlegen: Increases your expertise rating by (%d+)%.$", "ExpertiseRating"}, -- Earthwarden
 	{"^%+?(%d+) Waffenkunde$", "ExpertiseRating"}, -- Guardian's Shadow Crystal
-	{"^Equip: Improves critical strike rating by (%d+)%.$", "CritRating"},
-	{"^Equip: Increases your critical strike rating by (%d+)%.$", "CritRating"},
+	--Crit
+	{"^Anlegen: Erhöht kritische Trefferwertung um (%d+)%.$", "CritRating"},
+	{"^Anlegen: Increases your critical strike rating by (%d+)%.$", "CritRating"},
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Mantle of Malorne
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Enscribed Fire Opal (after normalization)
 	{"^%+?(%d+) Critical [Ss]trike [Rr]ating%.?$", "CritRating"}, -- One head enchantment is "20 Critical strike rating." with a dot and lowercase
 	{"^Scope %(%+(%d+) Critical Strike Rating%)$", "CritRating"},
 	{"^%+?(%d+) Kritische Trefferwertung$", "CritRating"}, -- Heartseeker Scope (untested); Pawn doesn't distinguish between ranged and hybrid crit rating
-	{"^Equip: Increases your hit rating by (%d+)%.$", "HitRating"}, -- Don Julio's Band
-	{"^Equip: Improves hit rating by (%d+)%.$", "HitRating"},
+	--Hit
+	{"^Anlegen: Erhöht Trefferwertung um (%d+)%.$", "HitRating"}, -- Don Julio's Band
+	{"^Anlegen: Verbessert Eure Trefferwertung um (%d+)%.$", "HitRating"},
 	{"^%+?(%d+) Trefferwertung$", "HitRating"}, -- 3% hit scope
 	{"^Surefooted$", "HitRating", 10, PawnMultipleStatsFixed}, -- Enchantment (untested); has additional effects
 	{"^Accuracy$", "HitRating", 25, PawnMultipleStatsFixed, "CritRating", 25, PawnMultipleStatsFixed}, -- weapon enchantment
-	{"^Equip: Improves your resilience rating by (%d+)%.$", "ResilienceRating"},
+	{"^Anlegen: Improves your resilience rating by (%d+)%.$", "ResilienceRating"},
 	{"^%+?(%d+) Resilience Rating$", "ResilienceRating"},
 	{"^%+?(%d+) Resilience$", "ResilienceRating"}, -- Sublime Mystic Dawnstone
+	--Tempo
 	{"^Counterweight %(%+(%d+) Haste Rating%)", "HasteRating"},
-	{"^Equip: Improves haste rating by (%d+)%.$", "HasteRating"}, -- Swiftsteel Shoulders
+	{"^Anlegen: Erhöht Tempowertung um (%d+)%.$", "HasteRating"}, -- Swiftsteel Shoulders
 	{"^%+?(%d+) Tempowertung$", "HasteRating"}, -- Leggings of the Betrayed
-	{"^Equip: Increases your mastery rating by (%d+)%.", "MasteryRating"}, -- Elementium Poleaxe (4.0) (Do not include $; mastery rating now includes the name of your mastery on the item.)
+	--Mastery
+	{"^Anlegen: Increases your mastery rating by (%d+)%.", "MasteryRating"}, -- Elementium Poleaxe (4.0) (Do not include $; mastery rating now includes the name of your mastery on the item.)
 	{"^%+?(%d+) Meisterschaftswertung$", "MasteryRating"}, -- Fractured Amberjewel (4.0).
-	{"^Equip: Increases attack power by (%d+)%.$", "Ap"},
+	--AP
+	{"^Anlegen: Erhöht die Angriffskraft um (%d+)%.$", "Ap"},
 	{"^%+?(%d+) Angriffskraft$", "Ap"},
 	{"^%+?(%d+) Distanzangriffskraft$", "Rap"},
-	{"^Equip: Increases ranged attack power by (%d+)%.$", "Rap"},
-	{"^Equip: Restores (%d+) mana per 5 sec%.$", "Mp5"},
+	{"^Anlegen: Erhöht die Distanzangriffskraft um (%d+)%.$", "Rap"},
+	--Mana Stellt 12 Sek. lang pro Sekunde 30 Mana wieder her.
+	{"^Anlegen: Stellt alle 5 Sek. (%d+) Mana wieder her.$", "Mp5"},
 	{"^%+?(%d+) Regeneration$", "Mp5"}, -- Shoulder enchantment, Scryers?
 	{"^Mana Regen (%d+) per 5 sec%.$", "Mp5"},
 	{"^%+?(%d+) [mM]ana [pP]er 5 [sS]ec%.?$", "Mp5"}, 
@@ -721,50 +731,60 @@ PawnRegexes =
 	{"^%+?(%d+) [mM]ana every 5 [sS]ec%.$", "Mp5"},
 	{"^%+?(%d+) [mM]ana every 5 seconds$", "Mp5"},
 	{"^%+(%d+) Mana restored per 5 seconds$", "Mp5"}, -- Magister's armor kit
-	{"^Equip: Restores (%d+) health every 5 sec%.$", "Hp5"},
-	{"^Equip: Restores (%d+) health per 5 sec%.$", "Hp5"}, -- Yes, both "every" and "per" are used on items...
+	{"^Anlegen: Stellt alle 5 Sek. (%d+) health wieder her.$", "Hp5"},
+	{"^Benutzen: Restores (%d+) health per 5 sec%.$", "Hp5"}, -- Yes, both "every" and "per" are used on items...
 	{"^%+?(%d+) [hH]ealth [eE]very 5 [sS]ec%.?$", "Hp5"}, -- Aquamarine Signet of Regeneration
 	{"^%+?(%d+) [hH]ealth [pP]er 5 [sS]ec%.?$", "Hp5"}, -- Anglesite Choker of Regeneration
 	{"^%+(%d+) Health and Mana every 5 sec$", "Mp5", 1, PawnMultipleStatsExtract, "Hp5", 1, PawnMultipleStatsExtract}, -- Greater Vitality boots enchantment
+	--Grund
 	{"^%+(%d+) Mana$", "Mana"}, -- +150 mana enchantment
 	{"^%+(%d+) Gesundheit$", "Health"}, -- +100 health head/leg enchantment
 	{"^%+(%d+) Ausdauer$", "Health"}, -- +150 health enchantment
 	{"^(%d+) Rüstung$", "AutoArmor"}, -- normal armor
 	{"^%+(%d+) Rüstung$", "BonusArmor"}, -- cloak armor enchantments
 	{"^Reinforced %(%+(%d+) Armor%)$", "BonusArmor"}, -- armor kits
-	{"^Equip: %+(%d+) Armor%.$", "BonusArmor"}, -- paladin Royal Seal of Eldre'Thalas
-	{"^Equip: Increases spell power by (%d+)%.$", "SpellPower"}, -- Overlaid Chain Spaulders
+	{"^Anlegen: %+(%d+) Armor%.$", "BonusArmor"}, -- paladin Royal Seal of Eldre'Thalas
+	--Zauber
+	{"^Anlegen: Erhöht die Zaubermacht um (%d+)%.$", "SpellPower"}, -- Overlaid Chain Spaulders
 	{"^%+?(%d+) Zaubermacht$", "SpellPower"}, -- Reckless Monarch Topaz
-	{"^Equip: Increases armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Onslaught Breastplate, Vereesa's Silver Chain Belt
-	{"^Equip: Increases your armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Argent Skeleton Crusher
+	{"^Anlegen: Increases armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Onslaught Breastplate, Vereesa's Silver Chain Belt
+	{"^Anlegen: Increases your armor penetration rating by (%d+)%.$", "ArmorPenetration"}, -- Argent Skeleton Crusher
+	--Durchschlag
 	{"^%+?(%d+) Rüstungsdurchschlag$", "ArmorPenetration"}, -- Fractured Scarlet Ruby
-	{"^Equip: Increases your spell penetration by (%d+)%.$", "SpellPenetration"}, -- Frostfire Robe
+	{"^Anlegen: Increases your spell penetration by (%d+)%.$", "SpellPenetration"}, -- Frostfire Robe
 	{"^%+?(%d+) Zauberdurchschlag$", "SpellPenetration"}, -- Radiant Talasite
+	--Feuer
 	{"^%+(%d+) Feuerschaden$", "FireSpellDamage"},
 	{"^%+(%d+) Feuerzauberschaden$", "FireSpellDamage"},
-	{"^Equip: Increases damage done by Fire spells and effects by up to (%d+)%.$", "FireSpellDamage"},
-	{"^Equip: Increases fire spell power by (%d+)%.$", "FireSpellDamage"},
+	{"^Anlegen: Increases damage done by Fire spells and effects by up to (%d+)%.$", "FireSpellDamage"},
+	{"^Anlegen: Increases fire spell power by (%d+)%.$", "FireSpellDamage"},
+	--Schatten
 	{"^%+(%d+) Schattenschaden$", "ShadowSpellDamage"},
 	{"^%+(%d+) Schattenzauberschaden$", "ShadowSpellDamage"},
-	{"^Equip: Increases damage done by Shadow spells and effects by up to (%d+)%.$", "ShadowSpellDamage"},
-	{"^Equip: Increases shadow spell power by (%d+)%.$", "FrostSpellDamage"}, -- Frozen Shadoweave Shoulders
+	{"^Anlegen: Increases damage done by Shadow spells and effects by up to (%d+)%.$", "ShadowSpellDamage"},
+	{"^Anlegen: Increases shadow spell power by (%d+)%.$", "FrostSpellDamage"}, -- Frozen Shadoweave Shoulders
+	--Natur
 	{"^%+(%d+) Naturschaden$", "NatureSpellDamage"}, -- Netherstalker Legguards of Nature's Wrath
 	{"^%+(%d+) Naturzauberschaden$", "NatureSpellDamage"},
-	{"^Equip: Increases damage done by Nature spells and effects by up to (%d+)%.$", "NatureSpellDamage"},
-	{"^Equip: Increases nature spell power by (%d+)%.$", "NatureSpellDamage"},
+	{"^Anlegen: Increases damage done by Nature spells and effects by up to (%d+)%.$", "NatureSpellDamage"},
+	{"^Anlegen: Increases nature spell power by (%d+)%.$", "NatureSpellDamage"},
+	--Arkan
 	{"^%+(%d+) Arkaneschaden$", "ArcaneSpellDamage"},
 	{"^%+(%d+) Arkanezauberschaden$", "ArcaneSpellDamage"}, -- Dragon Finger of Arcane Wrath
-	{"^Equip: Increases damage done by Arcane spells and effects by up to (%d+)%.$", "ArcaneSpellDamage"},
-	{"^Equip: Increases arcane spell power by (%d+)%.$", "ArcaneSpellDamage"},
+	{"^Anlegen: Increases damage done by Arcane spells and effects by up to (%d+)%.$", "ArcaneSpellDamage"},
+	{"^Anlegen: Increases arcane spell power by (%d+)%.$", "ArcaneSpellDamage"},
+	--Frost
 	{"^%+(%d+) Frostschaden$", "FrostSpellDamage"},
 	{"^%+(%d+) Frostzauberschaden$", "FrostSpellDamage"}, -- enchantment
-	{"^Equip: Increases damage done by Frost spells and effects by up to (%d+)%.$", "FrostSpellDamage"},
-	{"^Equip: Increases frost spell power by (%d+)%.$", "FrostSpellDamage"}, -- Frozen Shadoweave Shoulders
+	{"^Anlegen: Increases damage done by Frost spells and effects by up to (%d+)%.$", "FrostSpellDamage"},
+	{"^Anlegen: Increases frost spell power by (%d+)%.$", "FrostSpellDamage"}, -- Frozen Shadoweave Shoulders
+	--Heilig
 	{"^%+(%d+) Heiligschaden$", "HolySpellDamage"},
 	{"^%+(%d+) Heiligzauberschaden$", "HolySpellDamage"},
-	{"^Equip: Increases damage done by Holy spells and effects by up to (%d+)%.$", "HolySpellDamage"}, -- Lightforged Blade
-	{"^Equip: Increases the damage done by Holy spells and effects by up to (%d+)%.$", "HolySpellDamage"}, -- Drape of the Righteous
-	{"^Equip: Increases holy spell power by (%d+)%.$", "HolySpellDamage"},
+	{"^Anlegen: Increases damage done by Holy spells and effects by up to (%d+)%.$", "HolySpellDamage"}, -- Lightforged Blade
+	{"^Anlegen: Increases the damage done by Holy spells and effects by up to (%d+)%.$", "HolySpellDamage"}, -- Drape of the Righteous
+	{"^Anlegen: Increases holy spell power by (%d+)%.$", "HolySpellDamage"},
+	--Resi
 	{"^%+?(%d+) All Resistances$", "AllResist"},
 	{"^%+?(%d+) Resist All$", "AllResist"}, -- Prismatic Sphere
 	{"^%+?(%d+) Feuer Widerstand$", "FireResist"},
@@ -772,6 +792,7 @@ PawnRegexes =
 	{"^%+?(%d+) Natur Widerstand$", "NatureResist"},
 	{"^%+?(%d+) Arckan Widerstand$", "ArcaneResist"},
 	{"^%+?(%d+) Frost Widerstand$", "FrostResist"},
+	--Gems
 	{"^Roter Sockel$", "RedSocket", 1, PawnMultipleStatsFixed},
 	{"^Gelber Sockel$", "YellowSocket", 1, PawnMultipleStatsFixed},
 	{"^Blauer Sockel$", "BlueSocket", 1, PawnMultipleStatsFixed},
@@ -783,7 +804,7 @@ PawnRegexes =
 	-- Rare strings that are ignored (common ones are at the top of the file)
 	-- ========================================
 	{'^"'}, -- Flavor text
-	{"^Increases attack power by (%d+) in Cat, Bear, Dire Bear, and Moonkin forms only%.$"}, -- Shows up on weapons for druids
+	{"^Erhöht die Angriffskraft in Katzen-, Bären- oder Mondkingestalt um (%d+).$"}, -- Shows up on weapons for druids
 	{"^Alterac Valley$"}, -- Stormpike Soldier's Blood
 	{"^Blackrock Depths$"}, -- Dark Brewmaiden's Brew
 	{"^Blade's Edge Mountains$"}, -- Felsworn Gas Mask
@@ -809,24 +830,24 @@ PawnRegexes =
 -- Two-handed Axes, Maces, and Swords will have their stats converted to the 2H version later.
 PawnRightHandRegexes =
 {
-	{"^Speed ([%d%.,]+)$", "Speed"},
-	{"^Arrow$", "IsBow", 1, PawnMultipleStatsFixed},
-	{"^Axe$", "IsAxe", 1, PawnMultipleStatsFixed},
-	{"^Bow$", "IsBow", 1, PawnMultipleStatsFixed},
-	{"^Bullet$", "IsGun", 1, PawnMultipleStatsFixed},
-	{"^Crossbow$", "IsCrossbow", 1, PawnMultipleStatsFixed},
-	{"^Dagger$", "IsDagger", 1, PawnMultipleStatsFixed},
-	{"^Fist Weapon$", "IsFist", 1, PawnMultipleStatsFixed},
-	{"^Gun$", "IsGun", 1, PawnMultipleStatsFixed},
-	{"^Mace$", "IsMace", 1, PawnMultipleStatsFixed},
-	{"^Polearm$", "IsPolearm", 1, PawnMultipleStatsFixed},
-	{"^Staff$", "IsStaff", 1, PawnMultipleStatsFixed},
-	{"^Sword$", "IsSword", 1, PawnMultipleStatsFixed},
-	{"^Thrown$", "IsThrown", 1, PawnMultipleStatsFixed},
-	{"^Wand$", "IsWand", 1, PawnMultipleStatsFixed},
-	{"^Cloth$", "IsCloth", 1, PawnMultipleStatsFixed},
-	{"^Leather$", "IsLeather", 1, PawnMultipleStatsFixed},
-	{"^Mail$", "IsMail", 1, PawnMultipleStatsFixed},
-	{"^Plate$", "IsPlate", 1, PawnMultipleStatsFixed},
-	{"^Shield$", "IsShield", 1, PawnMultipleStatsFixed},
+	{"^Tempo ([%d%.,]+)$", "Speed"},
+	{"^Pfeil$", "IsBow", 1, PawnMultipleStatsFixed},
+	{"^Axt$", "IsAxe", 1, PawnMultipleStatsFixed},
+	{"^Bogen$", "IsBow", 1, PawnMultipleStatsFixed},
+	{"^Kugel$", "IsGun", 1, PawnMultipleStatsFixed},
+	{"^Armbrust$", "IsCrossbow", 1, PawnMultipleStatsFixed},
+	{"^Dolch$", "IsDagger", 1, PawnMultipleStatsFixed},
+	{"^Faustwaffe$", "IsFist", 1, PawnMultipleStatsFixed},
+	{"^Schusswaffe$", "IsGun", 1, PawnMultipleStatsFixed},
+	{"^Streitkolben$", "IsMace", 1, PawnMultipleStatsFixed},
+	{"^Stangenwaffe$", "IsPolearm", 1, PawnMultipleStatsFixed},
+	{"^Stab$", "IsStaff", 1, PawnMultipleStatsFixed},
+	{"^Schwert$", "IsSword", 1, PawnMultipleStatsFixed},
+	{"^Wurfwaffe$", "IsThrown", 1, PawnMultipleStatsFixed},
+	{"^Zauberstab$", "IsWand", 1, PawnMultipleStatsFixed},
+	{"^Stoff$", "IsCloth", 1, PawnMultipleStatsFixed},
+	{"^Leder$", "IsLeather", 1, PawnMultipleStatsFixed},
+	{"^Kette$", "IsMail", 1, PawnMultipleStatsFixed},
+	{"^Platte$", "IsPlate", 1, PawnMultipleStatsFixed},
+	{"^Schild$", "IsShield", 1, PawnMultipleStatsFixed},
 }
